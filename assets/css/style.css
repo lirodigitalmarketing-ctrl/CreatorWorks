@@ -870,59 +870,16 @@ p { margin: 0 0 1.1em; }
 .ticks li.is-soon::before { background: transparent; border: 1.5px solid var(--gold); color: var(--gold); content: "◷"; font-size: 0.6rem; }
 .row--soon .row__out { background: var(--gold-wash); border: 1px dashed var(--gold); }
 
-/* ---------- 3D book mockup ---------- */
-/* Kept deliberately shallow: a steep rotateY forces the browser to resample
-   the cover and softens its type. Shadows sit on the wrapper, not on the
-   image, so the bitmap is never run through a filter. */
-.book3d {
-  --tilt: -7deg;
-  position: relative;
-  width: min(100%, 420px);
-  margin-inline: auto;
-  perspective: 2400px;
-}
-.book3d__inner {
-  position: relative;
-  transform: rotateY(var(--tilt));
-  transition: transform 0.6s var(--ease);
-  border-radius: 3px 8px 8px 3px;
-  box-shadow: 22px 30px 44px -18px rgba(17, 17, 16, 0.45), 4px 6px 14px -8px rgba(17, 17, 16, 0.3);
-}
-.book3d:hover .book3d__inner { transform: rotateY(calc(var(--tilt) - 3deg)); }
-.book3d__cover {
+/* ---------- product shot (supplied 3D render, transparent PNG) ---------- */
+.book-shot {
   display: block;
-  width: 100%;
+  width: min(100%, 420px);
   height: auto;
-  border-radius: 3px 8px 8px 3px;
-  background: var(--paper);
+  margin-inline: auto;
+  transition: transform 0.5s var(--ease);
 }
-/* spine */
-.book3d__inner::before {
-  content: "";
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 18px;
-  border-radius: 3px 0 0 3px;
-  background: linear-gradient(90deg, rgba(17, 17, 16, 0.3), rgba(17, 17, 16, 0.05) 60%, rgba(255, 255, 255, 0.45));
-  pointer-events: none;
-}
-/* page block on the open edge */
-.book3d__inner::after {
-  content: "";
-  position: absolute;
-  right: -8px; top: 1.2%; bottom: 1.2%;
-  width: 9px;
-  border-radius: 0 3px 3px 0;
-  background: repeating-linear-gradient(180deg, #fffdf9 0 2px, #e4dbcd 2px 3px);
-  box-shadow: 2px 2px 6px -2px rgba(17, 17, 16, 0.35);
-  pointer-events: none;
-}
-.book3d--flat .book3d__inner { transform: none; }
-.book3d--sm { width: min(100%, 300px); }
-
-@media (prefers-reduced-motion: reduce) {
-  .book3d:hover .book3d__inner { transform: rotateY(var(--tilt)); }
-}
+.book-shot:hover { transform: translateY(-8px); }
+.book-shot--sm { width: min(100%, 290px); }
 
 /* split CTA with product shot */
 .cta--split {
@@ -939,7 +896,7 @@ p { margin: 0 0 1.1em; }
   .cta--split { grid-template-columns: 1fr; text-align: center; justify-items: center; }
   .cta--split .btn-group { justify-content: center; }
   .cta--split h2, .cta--split p { margin-inline: auto; }
-  .cta--split .book3d { margin-inline: auto; }
+  .cta--split .book-shot { margin-inline: auto; }
 }
 
 /* ---------- product hero: title, book, then the pitch ---------- */
@@ -966,7 +923,7 @@ p { margin: 0 0 1.1em; }
     row-gap: 4px;
   }
   .hero--product .stage { margin: 26px 0 32px; }
-  .hero--product .book3d { width: min(100%, 340px); }
+  .hero--product .book-shot { width: min(100%, 300px); }
 }
 
 /* ---------- line icons ---------- */
@@ -1000,7 +957,7 @@ p { margin: 0 0 1.1em; }
 /* centre the cover and the buy button once the product hero stacks */
 @media (max-width: 980px) {
   .hero--product .stage { display: grid; place-items: center; }
-  .hero--product .book3d { margin-inline: auto; }
+  .hero--product .book-shot { margin-inline: auto; }
   .hero--product .hero__actions { justify-content: center; }
   .hero--product .hero__note { justify-content: center; text-align: left; }
 }

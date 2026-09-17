@@ -43,14 +43,9 @@ Deploy by uploading the folder to any static host (GitHub Pages, Netlify, Vercel
   so the Whop store is the single delivery point.
 - `assets/downloads/creator-product-playbook.pdf` is kept in the repo but is no longer linked;
   delivery happens through Whop.
-- `assets/img/playbook-cover.png` is the playbook cover, extracted from page 1 of the PDF (lossless PNG,
-  lightly sharpened) and shown in a CSS 3D book mockup (`.book3d`) on `playbook.html` and `blog.html`.
-  The PDF stores each page as a flat 1055x1491 raster, so that is the maximum resolution available from it —
-  **replace this file with the original high-resolution cover artwork when you have it** and the mockups
-  sharpen everywhere at once. To use a pre-rendered 3D mockup image instead, drop it in, add `book3d--flat`
-  and delete the `.book3d__inner` spine/page pseudo-elements.
-- The book tilt is kept shallow on purpose: a steep `rotateY` makes the browser resample the cover and
-  softens its type. Shadows live on the wrapper rather than as a `filter` on the image for the same reason.
+- Book: `assets/img/Playbook Image.png` is the supplied 3D render. `playbook-book.png` is that file cropped
+  to its artwork and scaled to 1100px tall, shown flat via `.book-shot` on `playbook.html` and `blog.html`.
+  The render carries its own spine, page edges and shadow, so no CSS mockup is applied over it.
 - Logo: `assets/img/Creator Works Image Logo.jpeg` is the supplied original. `logo-mark.png` is that file with
   the white background keyed out, squared and scaled to 512px (used in the header and as the favicon), and
   `logo-mark-light.png` is the same mark with the black recoloured to cream for the ink footer. Regenerate both
