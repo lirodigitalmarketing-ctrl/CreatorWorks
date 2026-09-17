@@ -13,6 +13,7 @@ Static HTML/CSS/JS. No build step, no dependencies.
 | `about.html` | About Us — why we exist, values, studio team, the deal |
 | `services.html` | Services — product types, build process, launch support, FAQ |
 | `projects.html` | Our Projects — filterable case-study grid + stats |
+| `playbook.html` | The Creator Product Playbook — free product landing page with the Whop call to action |
 | `blog.html` | Blog — featured post and article grid |
 | `start.html` | Start Your Project — brief form, what happens next, FAQ |
 
@@ -36,7 +37,12 @@ Deploy by uploading the folder to any static host (GitHub Pages, Netlify, Vercel
 
 ## Notes
 
-- `assets/downloads/creator-product-playbook.pdf` is the free lead magnet linked across the site.
+- **Whop link placeholder:** every "Get it free on Whop" button on `playbook.html` points at
+  `https://whop.com/creator-works/`. Replace both occurrences with your real Whop product URL.
+- Every playbook call to action across the site now routes to `playbook.html` rather than the PDF,
+  so the Whop store is the single delivery point.
+- `assets/downloads/creator-product-playbook.pdf` is kept in the repo but is no longer linked;
+  delivery happens through Whop.
 - `assets/img/logo-mark.svg` is a vector rebuild of the logo mark used in the nav, footer and favicon.
   Drop in the original brand artwork if you prefer the exact file.
 - The brief form on `start.html` is front-end only — it shows a confirmation and resets.
