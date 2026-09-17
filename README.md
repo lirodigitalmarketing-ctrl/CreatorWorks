@@ -41,5 +41,8 @@ Deploy by uploading the folder to any static host (GitHub Pages, Netlify, Vercel
   Drop in the original brand artwork if you prefer the exact file.
 - The brief form on `start.html` is front-end only — it shows a confirmation and resets.
   Point it at a form handler (Formspree, Netlify Forms, your own endpoint) before going live.
+- Courses are presented as **coming soon** everywhere (services card, niche lists, decision guide, footer,
+  brief form, FAQs) because filming hasn't started yet. When the studio launches, drop the `soon` /
+  `is-soon` / `card--soon` classes and restore the full course copy in `services.html#courses`.
 - Contact address `hello@creatorworks.co` and the social/DM calls to action are placeholders.
 - Project stats, testimonials and blog posts are sample content — swap in real numbers before launch.

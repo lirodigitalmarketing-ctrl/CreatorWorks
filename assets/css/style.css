@@ -840,3 +840,32 @@ p { margin: 0 0 1.1em; }
   .reveal { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
 }
+
+/* ---------- coming soon ---------- */
+.soon {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 11px;
+  border-radius: 999px;
+  border: 1px solid var(--gold);
+  background: var(--gold-wash);
+  color: #8a6427;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.soon::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+.card--soon { border-style: dashed; border-color: var(--gold); background: linear-gradient(180deg, var(--paper), var(--gold-wash)); }
+.card__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
+.card__head h3 { margin: 0; }
+.ticks li.is-soon { color: var(--muted); }
+.ticks li.is-soon::before { background: transparent; border: 1.5px solid var(--gold); color: var(--gold); content: "◷"; font-size: 0.6rem; }
+.row--soon .row__out { background: var(--gold-wash); border: 1px dashed var(--gold); }
