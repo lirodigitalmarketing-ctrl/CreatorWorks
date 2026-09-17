@@ -51,9 +51,10 @@ Deploy by uploading the folder to any static host (GitHub Pages, Netlify, Vercel
   and delete the `.book3d__inner` spine/page pseudo-elements.
 - The book tilt is kept shallow on purpose: a steep `rotateY` makes the browser resample the cover and
   softens its type. Shadows live on the wrapper rather than as a `filter` on the image for the same reason.
-- `assets/img/logo-mark.svg` is a hand-traced vector of the logo mark (nav, footer, favicon). It is a close
-  likeness, not the original artwork — **replace it with the real logo file** when you have it. Keep the same
-  filename and everything picks it up; if the replacement is a PNG, update the `src`/`href` in the seven pages.
+- Logo: `assets/img/Creator Works Image Logo.jpeg` is the supplied original. `logo-mark.png` is that file with
+  the white background keyed out, squared and scaled to 512px (used in the header and as the favicon), and
+  `logo-mark-light.png` is the same mark with the black recoloured to cream for the ink footer. Regenerate both
+  from the source if the logo ever changes.
 - The brief form on `start.html` is front-end only — it shows a confirmation and resets.
   Point it at a form handler (Formspree, Netlify Forms, your own endpoint) before going live.
 - Courses are presented as **coming soon** everywhere (services card, niche lists, decision guide, footer,
