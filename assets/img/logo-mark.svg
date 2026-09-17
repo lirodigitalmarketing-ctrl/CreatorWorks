@@ -1,14 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 110" role="img" aria-label="Creator Works mark">
-  <g fill="none" stroke="#111110" stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M78 24A34 34 0 1 0 78 86" />
-    <path d="M30 32v46" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1250 1250" role="img" aria-label="Creator Works">
+  <title>Creator Works</title>
+  <defs>
+    <clipPath id="cwCut"><rect x="0" y="0" width="828" height="1250"/></clipPath>
+    <mask id="cwBowl">
+      <rect x="0" y="0" width="1250" height="1250" fill="#fff"/>
+      <ellipse cx="640" cy="610" rx="268" ry="178" fill="#000"/>
+    </mask>
+  </defs>
+
+  <!-- the C: outer disc with a wide lens removed, cut flat on the right -->
+  <g clip-path="url(#cwCut)">
+    <circle cx="600" cy="610" r="313" fill="#111110" mask="url(#cwBowl)"/>
   </g>
-  <path d="M52 34h24v42H52z" fill="#111110" />
-  <path d="M60 36l30 19-30 19z" fill="#111110" />
-  <path d="M60 40l22 15-22 15z" fill="#fffdf9" opacity="0" />
-  <g stroke="#c2924e" stroke-width="9" stroke-linecap="round">
-    <path d="M100 36l14-6" />
-    <path d="M102 55h16" />
-    <path d="M100 74l14 6" />
+
+  <!-- left block with its page slot -->
+  <rect x="268" y="438" width="164" height="488" rx="64" fill="#111110"/>
+  <rect x="352" y="486" width="66" height="330" rx="33" fill="#fffdf9"/>
+
+  <!-- play head -->
+  <path d="M512 512 A18 18 0 0 1 541 498 L812 615 A18 18 0 0 1 812 643 L541 760 A18 18 0 0 1 512 746 Z" fill="#111110"/>
+
+  <!-- sound marks -->
+  <g stroke="#c2924e" stroke-width="44" stroke-linecap="round">
+    <path d="M851 549 L1001 483"/>
+    <path d="M855 629 L1043 629"/>
+    <path d="M851 709 L1001 775"/>
   </g>
 </svg>

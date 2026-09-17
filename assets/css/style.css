@@ -149,8 +149,8 @@ p { margin: 0 0 1.1em; }
   padding: 14px 0;
 }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.brand__mark { width: 42px; height: 42px; flex: none; }
-.brand__text { display: flex; flex-direction: column; line-height: 1; }
+.brand__mark { width: 44px; height: 44px; flex: none; }
+.brand__text { display: flex; flex-direction: column; justify-content: center; line-height: 1; }
 .brand__name {
   font-family: var(--font-display);
   font-weight: 800;

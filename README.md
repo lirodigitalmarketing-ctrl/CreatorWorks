@@ -1,6 +1,6 @@
 # Creator Works — Website
 
-Marketing site for **Creator Works** (*Create. Build. Impact. / Ideas Into Income*) — a product studio that
+Marketing site for **Creator Works** (*Ideas Into Income*) — a product studio that
 turns creators' content into digital products at zero upfront cost.
 
 Static HTML/CSS/JS. No build step, no dependencies.
@@ -51,8 +51,9 @@ Deploy by uploading the folder to any static host (GitHub Pages, Netlify, Vercel
   and delete the `.book3d__inner` spine/page pseudo-elements.
 - The book tilt is kept shallow on purpose: a steep `rotateY` makes the browser resample the cover and
   softens its type. Shadows live on the wrapper rather than as a `filter` on the image for the same reason.
-- `assets/img/logo-mark.svg` is a vector rebuild of the logo mark used in the nav, footer and favicon.
-  Drop in the original brand artwork if you prefer the exact file.
+- `assets/img/logo-mark.svg` is a hand-traced vector of the logo mark (nav, footer, favicon). It is a close
+  likeness, not the original artwork — **replace it with the real logo file** when you have it. Keep the same
+  filename and everything picks it up; if the replacement is a PNG, update the `src`/`href` in the seven pages.
 - The brief form on `start.html` is front-end only — it shows a confirmation and resets.
   Point it at a form handler (Formspree, Netlify Forms, your own endpoint) before going live.
 - Courses are presented as **coming soon** everywhere (services card, niche lists, decision guide, footer,
