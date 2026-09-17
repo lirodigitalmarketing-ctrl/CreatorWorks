@@ -967,3 +967,31 @@ p { margin: 0 0 1.1em; }
   .hero--product .stage { margin: 26px 0 32px; }
   .hero--product .book3d { width: min(100%, 340px); }
 }
+
+/* ---------- line icons ---------- */
+.card__icon svg,
+.step__icon svg,
+.row__icon svg {
+  width: 23px;
+  height: 23px;
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.card__icon,
+.step__icon,
+.row__icon {
+  background: var(--gold-wash);
+  border: 1px solid rgba(194, 146, 78, 0.35);
+  display: grid;
+  place-items: center;
+}
+.card__icon { width: 48px; height: 48px; border-radius: 13px; }
+.step__icon { width: 52px; height: 52px; }
+.step__icon svg { width: 22px; height: 22px; }
+.row__icon { width: 44px; height: 44px; border-radius: 12px; }
+.row__icon svg { width: 21px; height: 21px; }
+.card--dark .card__icon { background: rgba(194, 146, 78, 0.16); border-color: rgba(194, 146, 78, 0.4); }
+.card--dark .card__icon svg { stroke: var(--gold-light); }
