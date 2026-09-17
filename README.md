@@ -43,6 +43,9 @@ Deploy by uploading the folder to any static host (GitHub Pages, Netlify, Vercel
   so the Whop store is the single delivery point.
 - `assets/downloads/creator-product-playbook.pdf` is kept in the repo but is no longer linked;
   delivery happens through Whop.
+- `assets/img/playbook-cover.jpg` is the playbook cover, extracted from page 1 of the PDF and shown in a
+  CSS 3D book mockup (`.book3d`) on `playbook.html` and `blog.html`. To use a rendered mockup image
+  instead, drop it in and remove the `.book3d__inner` spine/page pseudo-elements.
 - `assets/img/logo-mark.svg` is a vector rebuild of the logo mark used in the nav, footer and favicon.
   Drop in the original brand artwork if you prefer the exact file.
 - The brief form on `start.html` is front-end only — it shows a confirmation and resets.
