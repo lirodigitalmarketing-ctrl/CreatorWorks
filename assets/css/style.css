@@ -121,13 +121,24 @@ p { margin: 0 0 1.1em; }
   transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), background 0.25s var(--ease), color 0.25s var(--ease);
 }
 .btn { white-space: nowrap; }
-.btn:hover { transform: translateY(-3px); box-shadow: var(--shadow-soft); }
+/* every button lands on brand gold when hovered */
+.btn:hover {
+  --btn-bg: var(--gold);
+  --btn-fg: #fff;
+  border-color: var(--gold);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px -14px rgba(194, 146, 78, 0.65);
+}
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(194, 146, 78, 0.35);
+}
 .btn:active { transform: translateY(0); }
 .btn svg { transition: transform 0.25s var(--ease); }
 .btn:hover svg { transform: translateX(4px); }
 .btn--gold { --btn-bg: var(--gold); --btn-fg: #fff; }
+.btn--gold:hover { --btn-bg: #ac7f3f; border-color: #ac7f3f; }
 .btn--ghost { --btn-bg: transparent; --btn-fg: var(--ink); border-color: var(--ink); }
-.btn--ghost:hover { background: var(--ink); color: #fff; }
 .btn--light { --btn-bg: #fff; --btn-fg: var(--ink); }
 .btn--sm { padding: 11px 20px; font-size: 0.85rem; }
 
