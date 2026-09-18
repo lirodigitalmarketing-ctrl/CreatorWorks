@@ -9,7 +9,7 @@ Static HTML/CSS/JS. No build step, no dependencies.
 
 | File | Page |
 | --- | --- |
-| `index.html` | Home — hero, niche marquee, "hiding inside your content", niches, decision guide, 5-step process, stats, free playbook |
+| `index.html` | Home — hero, niche marquee, "hiding inside your content", niches, decision guide, 5-step process, free playbook banner |
 | `about.html` | About Us — why we exist, values, studio team, the deal |
 | `services.html` | Services — product types, build process, launch support, FAQ |
 | `projects.html` | Our Projects — filterable case-study grid + stats |
@@ -56,4 +56,4 @@ Deploy by uploading the folder to any static host (GitHub Pages, Netlify, Vercel
   brief form, FAQs) because filming hasn't started yet. When the studio launches, drop the `soon` /
   `is-soon` / `card--soon` classes and restore the full course copy in `services.html#courses`.
 - Contact address `hello@creatorworks.co` is a placeholder.
-- Project stats, the homepage stat row and blog posts are sample content — swap in real numbers before launch.
+- The Our Projects case studies, its stat row and the blog posts are sample content — swap in real numbers before launch.
