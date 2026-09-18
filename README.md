@@ -37,7 +37,7 @@ Deploy by uploading the folder to any static host (GitHub Pages, Netlify, Vercel
 
 ## Notes
 
-- Both "Get it free on Whop" buttons on `playbook.html` point at
+- The "Get it free on our store" buttons (home page banner and `playbook.html` hero) point at
   `https://whop.com/creator-works-48b7/creator-works-playbook/`.
 - Every playbook call to action across the site now routes to `playbook.html` rather than the PDF,
   so the Whop store is the single delivery point.
