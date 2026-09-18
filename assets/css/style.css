@@ -999,8 +999,7 @@ p { margin: 0 0 1.1em; }
   .brand { gap: 9px; }
   /* the mark alone carries the brand here, so the button can sit dead centre */
   .brand__text { display: none; }
-  .nav__cta .btn { padding: 10px 15px; font-size: 0.78rem; gap: 7px; }
-  .nav__cta .btn svg { width: 12px; height: 12px; }
+  .nav__cta .btn { padding: 10px 16px; font-size: 0.78rem; }
   .nav__toggle { width: 40px; height: 40px; }
 }
 
