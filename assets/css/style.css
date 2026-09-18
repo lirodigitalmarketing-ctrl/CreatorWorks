@@ -699,34 +699,6 @@ p { margin: 0 0 1.1em; }
 .faq__a { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease); }
 .faq__a p { color: var(--muted); padding-bottom: 20px; margin: 0; max-width: 72ch; }
 
-/* ---------- quotes ---------- */
-.quote {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 30px;
-  position: relative;
-}
-.quote::before {
-  content: "\201C";
-  font-family: var(--font-display);
-  font-size: 4rem;
-  color: var(--gold);
-  line-height: 0.6;
-  display: block;
-  margin-bottom: 10px;
-}
-.quote p { font-size: 1rem; }
-.quote footer { display: flex; align-items: center; gap: 12px; font-size: 0.84rem; color: var(--muted); }
-.quote footer b { color: var(--ink); display: block; font-family: var(--font-display); }
-.avatar {
-  width: 40px; height: 40px; border-radius: 50%;
-  background: var(--ink); color: var(--gold);
-  display: grid; place-items: center;
-  font-family: var(--font-display); font-size: 0.85rem;
-  flex: none;
-}
-
 /* ---------- page hero ---------- */
 .page-hero {
   padding: clamp(50px, 7vw, 92px) 0 clamp(30px, 4vw, 54px);
