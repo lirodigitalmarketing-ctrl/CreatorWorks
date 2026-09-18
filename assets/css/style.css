@@ -1012,3 +1012,71 @@ p { margin: 0 0 1.1em; }
   .brand__mark { width: 42px; height: 42px; }
   .brand__name { font-size: 0.78rem; letter-spacing: 0.14em; white-space: nowrap; }
 }
+
+/* ---------- inside the studio ---------- */
+.crew {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.crew__card {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 30px 26px 28px;
+  overflow: hidden;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+}
+/* a gold wash that rises out of the corner on hover */
+.crew__card::after {
+  content: "";
+  position: absolute;
+  right: -70px; bottom: -70px;
+  width: 150px; height: 150px;
+  border-radius: 50%;
+  background: var(--gold-wash);
+  transform: scale(0.4);
+  opacity: 0;
+  transition: transform 0.45s var(--ease), opacity 0.45s var(--ease);
+  pointer-events: none;
+}
+.crew__card:hover { transform: translateY(-8px); box-shadow: var(--shadow); border-color: var(--gold); }
+.crew__card:hover::after { transform: scale(1); opacity: 1; }
+.crew__card > * { position: relative; z-index: 1; }
+
+.crew__icon {
+  width: 58px; height: 58px;
+  border-radius: 18px;
+  background: var(--ink);
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+  transform: rotate(var(--tilt, 0deg));
+  transition: transform 0.4s var(--ease), background 0.4s var(--ease);
+}
+.crew__icon svg {
+  width: 25px; height: 25px;
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.crew__card:hover .crew__icon { transform: rotate(0deg) scale(1.06); background: var(--gold); }
+.crew__card:hover .crew__icon svg { stroke: #fff; }
+
+.crew__tag {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.crew__card h3 { margin: 0 0 8px; }
+.crew__card p { margin: 0; color: var(--muted); font-size: 0.93rem; }
+
+@media (max-width: 980px) { .crew { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .crew { grid-template-columns: 1fr; } }
