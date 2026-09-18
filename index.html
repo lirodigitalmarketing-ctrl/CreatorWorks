@@ -5,18 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Creator Works — Ideas Into Income</title>
 <meta name="description" content="You have the audience. We build the product. Creator Works turns creators' content into digital products — e-books, guides, programmes and bundles — with zero upfront cost." />
-<!-- Link previews. Replace the two image URLs with the full https://yourdomain/... address once the site is live. -->
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="Creator Works" />
-<meta property="og:title" content="Creator Works — You have the audience. We build the product." />
-<meta property="og:description" content="We turn creators' content into digital products — built at zero upfront cost, launched to the audience you already have." />
-<meta property="og:image" content="assets/img/og-cover.jpg" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Creator Works — You have the audience. We build the product." />
-<meta name="twitter:description" content="We turn creators' content into digital products — built at zero upfront cost, launched to the audience you already have." />
-<meta name="twitter:image" content="assets/img/og-cover.jpg" />
 <link rel="icon" href="assets/img/logo-mark.png" type="image/png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -84,8 +72,34 @@
         </div>
 
         <div class="stage">
-          <img class="hero-shot" src="assets/img/hero-devices.jpg" width="948" height="890"
-               alt="A Creator Works laptop, phone and mug showing the brand and the words create, share, monetise." />
+          <span class="hero__hand hero__hand--top"><span class="hand">Turn your content<br />into income.</span></span>
+          <div class="stage__laptop">
+            <div class="stage__screen">
+              <span class="stage__label">30-Day Programme</span>
+              <div class="stage__title">Your Knowledge<em>Their Progress</em></div>
+              <div class="stage__play" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#111110"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <div class="stage__lessons">
+                <div class="stage__lesson"><span class="stage__dot">1</span> Week 1 · Mindset</div>
+                <div class="stage__lesson"><span class="stage__dot">2</span> Week 2 · The Basics</div>
+                <div class="stage__lesson"><span class="stage__dot">3</span> Week 3 · Your Routine</div>
+                <div class="stage__lesson"><span class="stage__dot">4</span> Week 4 · Next Steps</div>
+              </div>
+            </div>
+          </div>
+          <div class="stage__book" style="--rot:-6deg">
+            <small>Creator Edition</small>
+            <b>YOUR<br />E-BOOK</b>
+          </div>
+          <div class="stage__phone" style="--rot:4deg">
+            <div class="stage__phone-screen">
+              <span>Create</span>
+              <strong>Your Guide Awaits</strong>
+              <span>Monetise</span>
+            </div>
+          </div>
+          <span class="hero__hand hero__hand--bottom"><span class="hand">It could be yours.</span></span>
         </div>
       </div>
     </div>
@@ -110,31 +124,25 @@
           <p class="lead">The questions you answer, routines you share, recipes people save and lessons you repeat can become something your audience can own and buy. A strong digital product usually starts with value that is already visible in your content.</p>
           <a class="btn btn--ghost" href="services.html">See how we build it</a>
         </div>
-        <figure class="shot reveal">
-          <img src="assets/img/content-to-product.jpg" width="930" height="1160"
-               alt="A fitness reel on a phone beside the leg day programme, week one training plan and nutrition guide built from it." />
-          <figcaption>From a reel your audience already saved — to a programme they can buy.</figcaption>
-        </figure>
-      </div>
-
-      <div class="grid grid--3 reveal" style="margin-top:44px">
-        <div class="card">
-          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
-          <span class="post__tag">Content</span>
-          <h3>What you already share</h3>
-          <p>Posts. Videos. Advice. The things you repeat every single week.</p>
-        </div>
-        <div class="card">
-          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-5A8.3 8.3 0 0 1 4 11.5a8.4 8.4 0 0 1 8.5-8.4A8.4 8.4 0 0 1 21 11.5z"/></svg></div>
-          <span class="post__tag">Signals</span>
-          <h3>What people ask for</h3>
-          <p>Saves. DMs. Questions. "What's your full routine?" "Can you share the recipe?"</p>
-        </div>
-        <div class="card">
-          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2 3h3l2.6 12.2a2 2 0 0 0 2 1.6h8.4a2 2 0 0 0 2-1.6L22 7H6"/></svg></div>
-          <span class="post__tag">Product</span>
-          <h3>What they can own</h3>
-          <p>Guide. Programme. Workbook. Bundle. Something with your name on it.</p>
+        <div class="grid reveal" style="gap:16px">
+          <div class="card">
+            <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+            <span class="post__tag">Content</span>
+            <h3>What you already share</h3>
+            <p>Posts. Videos. Advice. The things you repeat every single week.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-5A8.3 8.3 0 0 1 4 11.5a8.4 8.4 0 0 1 8.5-8.4A8.4 8.4 0 0 1 21 11.5z"/></svg></div>
+            <span class="post__tag">Signals</span>
+            <h3>What people ask for</h3>
+            <p>Saves. DMs. Questions. "What's your full routine?" "Can you share the recipe?"</p>
+          </div>
+          <div class="card">
+            <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2 3h3l2.6 12.2a2 2 0 0 0 2 1.6h8.4a2 2 0 0 0 2-1.6L22 7H6"/></svg></div>
+            <span class="post__tag">Product</span>
+            <h3>What they can own</h3>
+            <p>Guide. Programme. Workbook. Bundle. Something with your name on it.</p>
+          </div>
         </div>
       </div>
 
@@ -157,38 +165,38 @@
         <p class="lead">Explore product ideas by niche. Same audience. Different possibilities.</p>
       </div>
       <div class="grid grid--3">
-        <article class="card card--shot reveal">
-          <img class="card__shot" src="assets/img/niche-fitness.jpg" width="490" height="452" loading="lazy" alt="A 30-day transformation programme shown on a tablet and phone beside a workout plan and shaker." />
+        <article class="card reveal">
+          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9.5v5M20.5 9.5v5M6.5 12h11"/></svg></div>
           <h3>Fitness</h3>
           <p>Turn your training into a programme people follow.</p>
           <ul class="ticks"><li>Beginner workout e-book</li><li>30-day programme</li><li>Nutrition &amp; meal guide</li><li class="is-soon">Online training course — soon</li></ul>
         </article>
-        <article class="card card--shot reveal">
-          <img class="card__shot" src="assets/img/niche-food.jpg" width="490" height="452" loading="lazy" alt="A signature cookbook lying open beside a bowl of food and a baking recipe page." />
+        <article class="card reveal">
+          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3v7a2 2 0 0 1-4 0V3M6 10v11M17 21V3c2 1.2 3 3.4 3 6.2s-1.1 4.1-3 4.3"/></svg></div>
           <h3>Food &amp; Cooking</h3>
           <p>Share your recipes with the world — properly packaged.</p>
           <ul class="ticks"><li>Signature cookbook</li><li>Recipe e-book / baking guide</li><li>Meal prep guide</li><li>Premium recipe bundle</li></ul>
         </article>
-        <article class="card card--shot reveal">
-          <img class="card__shot" src="assets/img/niche-podcast.jpg" width="490" height="452" loading="lazy" alt="A podcast playbook, guest insights bundle and templates beside a microphone and earbuds." />
+        <article class="card reveal">
+          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 19v3M9 22h6"/></svg></div>
           <h3>Podcasters</h3>
           <p>Turn your conversations into a product listeners keep.</p>
           <ul class="ticks"><li>Podcast insights e-book</li><li>Guest knowledge bundle</li><li>Worksheet / workbook</li><li class="is-soon">Podcast-based course — soon</li></ul>
         </article>
-        <article class="card card--shot reveal">
-          <img class="card__shot" src="assets/img/niche-beauty.jpg" width="490" height="452" loading="lazy" alt="A glow guide, skincare routine and style lookbook laid out together." />
+        <article class="card reveal">
+          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12l3.5 6L12 21 2.5 9 6 3z"/><path d="M2.5 9h19M9 3l3 6 3-6M12 9v12"/></svg></div>
           <h3>Beauty &amp; Fashion</h3>
           <p>Turn your style and expertise into a digital product.</p>
           <ul class="ticks"><li>Beauty / skincare guide</li><li>Style guide &amp; lookbook</li><li class="is-soon">Tutorial course — soon</li><li>Premium bundle</li></ul>
         </article>
-        <article class="card card--shot reveal">
-          <img class="card__shot" src="assets/img/niche-business.jpg" width="490" height="452" loading="lazy" alt="A build your brand course on a laptop beside a creator toolkit, planner and templates." />
+        <article class="card reveal">
+          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 20V9M12 20V4M6 20v-7M3 21h18"/></svg></div>
           <h3>Business / Education</h3>
           <p>Turn your knowledge into tools people actually need.</p>
           <ul class="ticks"><li>Educational e-book</li><li>Templates &amp; resources</li><li>Toolkit</li><li class="is-soon">Mini or full course — soon</li></ul>
         </article>
-        <article class="card card--shot reveal">
-          <img class="card__shot" src="assets/img/niche-travel.jpg" width="490" height="452" loading="lazy" alt="A Bali travel guide, seven-day itinerary and phone planner." />
+        <article class="card reveal">
+          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></div>
           <h3>Travel / Lifestyle</h3>
           <p>Turn your experiences into a guide people travel with.</p>
           <ul class="ticks"><li>Destination guide</li><li>3 / 5 / 7-day itinerary</li><li>Travel planner</li><li>Digital planner or journal</li></ul>
@@ -221,37 +229,37 @@
           <div class="row__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 7l10-4 10 4-10 4L2 7z"/><path d="M6 9.5V15c0 1.7 2.7 3 6 3s6-1.3 6-3V9.5"/></svg></div>
           <div><h3>People follow you to learn</h3><p>They want your knowledge and expertise.</p></div>
           <div class="row__arrow">→</div>
-          <div class="row__out"><img class="row__shot" src="assets/img/pick-course.jpg" width="480" height="197" loading="lazy" alt="An online course on a tablet beside a guide." /><span>E-book or guide</span></div>
+          <div class="row__out">E-book or guide</div>
         </div>
         <div class="row reveal">
           <div class="row__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3v7a2 2 0 0 1-4 0V3M6 10v11M17 21V3c2 1.2 3 3.4 3 6.2s-1.1 4.1-3 4.3"/></svg></div>
           <div><h3>People save your recipes</h3><p>They love your food and want to try it.</p></div>
           <div class="row__arrow">→</div>
-          <div class="row__out"><img class="row__shot" src="assets/img/pick-cookbook.jpg" width="480" height="197" loading="lazy" alt="An open recipe book beside a plated dish." /><span>Cookbook</span></div>
+          <div class="row__out">Cookbook</div>
         </div>
         <div class="row reveal">
           <div class="row__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
           <div><h3>People ask for your routine</h3><p>They want to follow exactly what you do.</p></div>
           <div class="row__arrow">→</div>
-          <div class="row__out"><img class="row__shot" src="assets/img/pick-programme.jpg" width="480" height="197" loading="lazy" alt="A 30-day training plan cover." /><span>Programme or guide</span></div>
+          <div class="row__out">Programme or guide</div>
         </div>
         <div class="row reveal">
           <div class="row__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-6M4 11V3M12 21v-9M12 8V3M20 21v-4M20 13V3"/><path d="M1.5 15h5M9.5 8h5M17.5 17h5"/></svg></div>
           <div><h3>People want the tools you use</h3><p>They ask about your setup, templates or resources.</p></div>
           <div class="row__arrow">→</div>
-          <div class="row__out"><img class="row__shot" src="assets/img/pick-bundle.jpg" width="480" height="197" loading="lazy" alt="Templates, checklists and resources shown as a bundle." /><span>Bundle</span></div>
+          <div class="row__out">Bundle</div>
         </div>
         <div class="row reveal">
           <div class="row__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17v-5a9 9 0 0 1 18 0v5"/><path d="M21 18a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 2v2zM3 18a2 2 0 0 0 2 2h1v-6H5a2 2 0 0 0-2 2v2z"/></svg></div>
           <div><h3>You have a podcast</h3><p>They value your conversations and guests.</p></div>
           <div class="row__arrow">→</div>
-          <div class="row__out"><img class="row__shot" src="assets/img/pick-podcast.jpg" width="480" height="197" loading="lazy" alt="A podcast bundle with show notes and templates." /><span>Podcast bundle</span></div>
+          <div class="row__out">Podcast bundle</div>
         </div>
         <div class="row reveal row--soon">
           <div class="row__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M10 8.2l6 3.8-6 3.8V8.2z"/></svg></div>
           <div><h3>You teach visually</h3><p>Your content works best through video.</p></div>
           <div class="row__arrow">→</div>
-          <div class="row__out"><img class="row__shot" src="assets/img/pick-video.jpg" width="480" height="197" loading="lazy" alt="A video lesson playing on a tablet." /><span>Online course</span><span class="soon">Coming soon</span></div>
+          <div class="row__out">Online course <span class="soon">Coming soon</span></div>
         </div>
       </div>
     </div>
