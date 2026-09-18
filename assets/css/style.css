@@ -472,9 +472,29 @@ p { margin: 0 0 1.1em; }
 .banner > * { position: relative; z-index: 1; }
 .banner__label { font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 8px; }
 .banner h3 { font-size: clamp(1.3rem, 2.6vw, 2rem); margin: 0; max-width: 24ch; }
-.banner__perks { display: flex; gap: 30px; flex-wrap: wrap; position: relative; z-index: 1; }
-.banner__perk { text-align: center; font-size: 0.78rem; color: rgba(255, 255, 255, 0.8); }
-.banner__perk b { display: block; font-family: var(--font-display); font-size: 1.5rem; color: var(--gold); }
+.banner__perks {
+  display: flex;
+  gap: clamp(26px, 4vw, 52px);
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+  align-items: flex-start;
+}
+.banner__perk {
+  text-align: center;
+  font-size: clamp(0.86rem, 1.1vw, 0.98rem);
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.86);
+}
+.banner__perk b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3.6vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
 
 /* ---------- stats ---------- */
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
@@ -943,3 +963,15 @@ p { margin: 0 0 1.1em; }
 
 /* anchor targets clear the sticky header */
 [id] { scroll-margin-top: 96px; }
+
+/* keep the three perks on one row on a phone */
+@media (max-width: 760px) {
+  .banner__perks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    width: 100%;
+  }
+  .banner__perk { font-size: 0.78rem; }
+  .banner__perk b { font-size: 1.9rem; margin-bottom: 6px; }
+}
