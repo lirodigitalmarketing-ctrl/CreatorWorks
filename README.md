@@ -43,6 +43,13 @@ Deploy by uploading the folder to any static host (GitHub Pages, Netlify, Vercel
   so the Whop store is the single delivery point.
 - `assets/downloads/creator-product-playbook.pdf` is kept in the repo but is no longer linked;
   delivery happens through Whop.
+- Imagery: the product shots (`hero-devices`, `content-to-product`, `niche-*`, `pick-*`) are cropped from the
+  playbook PDF pages, upscaled 2x and sharpened. The PDF stores each page as a flat 1055x1491 raster, so these
+  are source-limited — replacing any of them with the original mockup artwork will sharpen that slot.
+- `assets/img/og-cover.jpg` is the 1200x630 link-preview image, rendered from `scratchpad/og.html` in the real
+  brand fonts. **The `og:image` / `twitter:image` tags use relative paths — change them to the full
+  `https://yourdomain/assets/img/og-cover.jpg` once the site has a domain**, or previews will not render on
+  most platforms.
 - Book: `assets/img/Playbook Image.png` is the supplied 3D render. `playbook-book.png` is that file cropped
   to its artwork and scaled to 1100px tall, shown flat via `.book-shot` on `playbook.html` and `blog.html`.
   The render carries its own spine, page edges and shadow, so no CSS mockup is applied over it.
