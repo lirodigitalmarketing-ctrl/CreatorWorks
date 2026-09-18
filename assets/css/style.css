@@ -120,6 +120,7 @@ p { margin: 0 0 1.1em; }
   cursor: pointer;
   transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), background 0.25s var(--ease), color 0.25s var(--ease);
 }
+.btn { white-space: nowrap; }
 .btn:hover { transform: translateY(-3px); box-shadow: var(--shadow-soft); }
 .btn:active { transform: translateY(0); }
 .btn svg { transition: transform 0.25s var(--ease); }
@@ -166,9 +167,10 @@ p { margin: 0 0 1.1em; }
   color: var(--muted);
   margin-top: 5px;
 }
-.nav__links { display: flex; align-items: center; gap: 30px; }
+.nav__links { display: flex; align-items: center; gap: clamp(18px, 2.2vw, 30px); }
 .nav__links a {
   text-decoration: none;
+  white-space: nowrap;
   font-size: 0.92rem;
   font-weight: 600;
   color: var(--ink-soft);
@@ -806,7 +808,7 @@ p { margin: 0 0 1.1em; }
   .stat:nth-child(2) { border-right: 0; }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .nav__toggle { display: grid; }
   .nav__links {
     position: absolute;
@@ -821,7 +823,22 @@ p { margin: 0 0 1.1em; }
   }
   .nav.is-open .nav__links { display: flex; }
   .nav__links a { padding: 13px 0; border-bottom: 1px solid var(--line); }
-  .nav__cta .btn { display: none; }
+
+  /* logo left, call to action centred, menu right */
+  .nav {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 10px;
+  }
+  .brand { grid-column: 1; justify-self: start; min-width: 0; }
+  .nav__cta { display: contents; }
+  .nav__cta .btn {
+    grid-column: 2;
+    justify-self: center;
+    white-space: nowrap;
+  }
+  .nav__toggle { grid-column: 3; justify-self: end; }
   .grid--2, .grid--3, .grid--4 { grid-template-columns: 1fr; }
   .hero__hand { display: none; }
   .stage__book { left: -12px; width: 108px; height: 150px; }
@@ -974,4 +991,25 @@ p { margin: 0 0 1.1em; }
   }
   .banner__perk { font-size: 0.78rem; }
   .banner__perk b { font-size: 1.9rem; margin-bottom: 6px; }
+}
+
+/* keep the three-part header row fitting on a narrow phone */
+@media (max-width: 620px) {
+  .brand__mark { width: 40px; height: 40px; }
+  .brand { gap: 9px; }
+  /* the mark alone carries the brand here, so the button can sit dead centre */
+  .brand__text { display: none; }
+  .nav__cta .btn { padding: 10px 15px; font-size: 0.78rem; gap: 7px; }
+  .nav__cta .btn svg { width: 12px; height: 12px; }
+  .nav__toggle { width: 40px; height: 40px; }
+}
+
+@media (max-width: 400px) {
+  .nav__cta .btn { padding: 10px 14px; font-size: 0.76rem; }
+}
+
+/* between phone and desktop the side columns are tighter: keep the wordmark on one line */
+@media (min-width: 621px) and (max-width: 1024px) {
+  .brand__mark { width: 42px; height: 42px; }
+  .brand__name { font-size: 0.78rem; letter-spacing: 0.14em; white-space: nowrap; }
 }
