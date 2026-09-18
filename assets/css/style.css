@@ -968,3 +968,6 @@ p { margin: 0 0 1.1em; }
   .hero--product .hero__actions { justify-content: center; }
   .hero--product .hero__note { justify-content: center; text-align: left; }
 }
+
+/* anchor targets clear the sticky header */
+[id] { scroll-margin-top: 96px; }

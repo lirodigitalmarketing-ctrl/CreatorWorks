@@ -2,6 +2,31 @@
 (function () {
   "use strict";
 
+  /* ---- always open a page at the top ----
+     Browsers restore the previous scroll position on back/forward and some
+     embedded viewers keep it across navigations; an in-page anchor still wins. */
+  if ("scrollRestoration" in history) {
+    try { history.scrollRestoration = "manual"; } catch (e) { /* ignore */ }
+  }
+
+  function toTop() {
+    var root = document.documentElement;
+    var hash = window.location.hash;
+    if (hash.length > 1) {
+      var target = null;
+      try { target = document.querySelector(hash); } catch (e) { /* invalid selector */ }
+      if (target) { target.scrollIntoView(); return; }
+    }
+    var behaviour = root.style.scrollBehavior;
+    root.style.scrollBehavior = "auto";
+    window.scrollTo(0, 0);
+    root.style.scrollBehavior = behaviour;
+  }
+
+  toTop();
+  window.addEventListener("load", toTop);
+  window.addEventListener("pageshow", function (e) { if (e.persisted) toTop(); });
+
   /* ---- mobile nav ---- */
   var nav = document.querySelector(".nav");
   var toggle = document.querySelector(".nav__toggle");
