@@ -59,5 +59,7 @@ Deploy by uploading the folder to any static host (GitHub Pages, Netlify, Vercel
 - Courses are presented as **coming soon** everywhere (services card, niche lists, decision guide, footer,
   brief form, FAQs) because filming hasn't started yet. When the studio launches, drop the `soon` /
   `is-soon` / `card--soon` classes and restore the full course copy in `services.html#courses`.
+- The header hides on scroll down via `.is-tucked`, deliberately **not** `.is-hidden` — that class is the
+  projects filter's `display: none !important`, which killed the transition and caused a scroll-jump loop.
 - Contact address `hello@creatorworks.co` is a placeholder.
 - The Our Projects case studies, its stat row and the blog posts are sample content — swap in real numbers before launch.

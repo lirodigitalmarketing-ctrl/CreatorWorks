@@ -150,16 +150,19 @@ p { margin: 0 0 1.1em; }
   z-index: 60;
   padding-block: 14px 0;
   background: transparent;
-  transition: transform 0.4s var(--ease);
+  /* translate3d keeps the pill (and its blur) on its own layer while it moves */
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
   will-change: transform;
+  backface-visibility: hidden;
 }
 /* out of the way on the way down, back on the way up */
-.site-header.is-hidden { transform: translateY(calc(-100% - 24px)); }
+.site-header.is-tucked { transform: translate3d(0, calc(-100% - 26px), 0); }
 .site-header .shell {
   /* a lighter tint than the cream page, held at low opacity so the page reads through it */
   background: rgba(255, 253, 249, 0.55);
-  backdrop-filter: blur(20px) saturate(150%);
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
   border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 999px;
   padding-inline: clamp(16px, 2vw, 30px);
@@ -883,6 +886,7 @@ p { margin: 0 0 1.1em; }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .site-header.is-tucked { transform: none; }
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;

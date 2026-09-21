@@ -47,28 +47,39 @@
   var header = document.querySelector(".site-header");
   if (header) {
     var lastY = window.scrollY;
+    var travel = 0;          /* how far the current gesture has run, one direction */
+    var hidden = false;
     var ticking = false;
-    var HIDE_AFTER = 140;   /* never hide while still near the top */
-    var THRESHOLD = 6;      /* ignore jitter and trackpad wobble */
+    var HIDE_AFTER = 160;    /* stay put near the top of the page */
+    var HIDE_TRAVEL = 90;    /* commit to hiding only after a real downward scroll */
+    var SHOW_TRAVEL = 40;    /* come back sooner than it leaves */
+
+    var setHidden = function (next) {
+      if (next === hidden) return;
+      hidden = next;
+      header.classList.toggle("is-tucked", next);
+    };
 
     var update = function () {
       ticking = false;
       var y = window.scrollY;
       var delta = y - lastY;
+      lastY = y;
 
       header.classList.toggle("is-stuck", y > 10);
 
-      if (Math.abs(delta) > THRESHOLD) {
-        var menuOpen = nav && nav.classList.contains("is-open");
-        if (delta > 0 && y > HIDE_AFTER && !menuOpen) {
-          header.classList.add("is-hidden");
-        } else if (delta < 0) {
-          header.classList.remove("is-hidden");
-        }
-        lastY = y;
-      }
+      /* a change of direction starts the measurement again, so momentum
+         wobble in the other direction cannot flip the header */
+      if ((delta > 0) !== (travel > 0)) travel = 0;
+      travel += delta;
 
-      if (y <= HIDE_AFTER) header.classList.remove("is-hidden");
+      if (y <= HIDE_AFTER || (nav && nav.classList.contains("is-open"))) {
+        setHidden(false);
+        travel = 0;
+        return;
+      }
+      if (travel > HIDE_TRAVEL) { setHidden(true); travel = 0; }
+      else if (travel < -SHOW_TRAVEL) { setHidden(false); travel = 0; }
     };
 
     update();
