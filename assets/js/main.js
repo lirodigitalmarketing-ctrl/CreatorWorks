@@ -43,14 +43,45 @@
     });
   }
 
-  /* ---- sticky header shadow ---- */
+  /* ---- header: lift off at the top, hide going down, return going up ---- */
   var header = document.querySelector(".site-header");
   if (header) {
-    var onScroll = function () {
-      header.classList.toggle("is-stuck", window.scrollY > 10);
+    var lastY = window.scrollY;
+    var ticking = false;
+    var HIDE_AFTER = 140;   /* never hide while still near the top */
+    var THRESHOLD = 6;      /* ignore jitter and trackpad wobble */
+
+    var update = function () {
+      ticking = false;
+      var y = window.scrollY;
+      var delta = y - lastY;
+
+      header.classList.toggle("is-stuck", y > 10);
+
+      if (Math.abs(delta) > THRESHOLD) {
+        var menuOpen = nav && nav.classList.contains("is-open");
+        if (delta > 0 && y > HIDE_AFTER && !menuOpen) {
+          header.classList.add("is-hidden");
+        } else if (delta < 0) {
+          header.classList.remove("is-hidden");
+        }
+        lastY = y;
+      }
+
+      if (y <= HIDE_AFTER) header.classList.remove("is-hidden");
     };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
+
+    update();
+    window.addEventListener(
+      "scroll",
+      function () {
+        if (!ticking) {
+          ticking = true;
+          window.requestAnimationFrame(update);
+        }
+      },
+      { passive: true }
+    );
   }
 
   /* ---- reveal on scroll ---- */

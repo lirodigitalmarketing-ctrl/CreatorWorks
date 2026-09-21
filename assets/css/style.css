@@ -150,7 +150,11 @@ p { margin: 0 0 1.1em; }
   z-index: 60;
   padding-block: 14px 0;
   background: transparent;
+  transition: transform 0.4s var(--ease);
+  will-change: transform;
 }
+/* out of the way on the way down, back on the way up */
+.site-header.is-hidden { transform: translateY(calc(-100% - 24px)); }
 .site-header .shell {
   /* a lighter tint than the cream page, held at low opacity so the page reads through it */
   background: rgba(255, 253, 249, 0.55);
