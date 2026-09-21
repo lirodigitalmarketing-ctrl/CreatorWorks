@@ -1146,3 +1146,47 @@ p { margin: 0 0 1.1em; }
   .card--shot > p { margin-inline: 22px; }
   .card--shot .ticks { margin-inline: 22px; }
 }
+
+/* ---------- home hero over the studio photograph ---------- */
+.hero--home {
+  position: relative;
+  isolation: isolate;
+  background: #0b0a09 url("../img/hero-bg.webp") right center / cover no-repeat;
+  padding-block: clamp(90px, 13vw, 170px) clamp(80px, 11vw, 140px);
+  color: #fff;
+}
+/* darkened from the left so the words hold, clear on the right so the desk shows */
+.hero--home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(11, 10, 9, 0.93) 0%, rgba(11, 10, 9, 0.82) 42%, rgba(11, 10, 9, 0.45) 66%, rgba(11, 10, 9, 0.12) 100%);
+}
+.hero--home .hero__grid { grid-template-columns: minmax(0, 1fr); }
+.hero--home h1 { max-width: 16ch; }
+.hero--home h1 { color: #fff; }
+.hero--home .hero__sub { color: #fff; max-width: 34ch; }
+.hero--home .lead { color: rgba(255, 255, 255, 0.76); max-width: 52ch; }
+.hero--home .eyebrow { color: var(--gold-light); }
+.hero--home .eyebrow::after { background: var(--gold-light); }
+.hero--home .hero__note { color: rgba(255, 255, 255, 0.72); }
+.hero--home .hero__note strong { color: #fff; }
+.hero--home .hero__rule { background: var(--gold); }
+
+/* outline button for dark grounds */
+.btn--outline-light {
+  --btn-bg: transparent;
+  --btn-fg: #fff;
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+@media (max-width: 900px) {
+  .hero--home {
+    background-image: url("../img/hero-bg-sm.webp");
+    background-position: center bottom;
+  }
+  .hero--home::before {
+    background: linear-gradient(180deg, rgba(11, 10, 9, 0.88) 0%, rgba(11, 10, 9, 0.74) 55%, rgba(11, 10, 9, 0.6) 100%);
+  }
+}
