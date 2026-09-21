@@ -152,19 +152,20 @@ p { margin: 0 0 1.1em; }
   background: transparent;
 }
 .site-header .shell {
-  background: rgba(247, 243, 236, 0.78);
-  backdrop-filter: blur(16px) saturate(140%);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  border: 1px solid rgba(17, 17, 16, 0.07);
+  /* a lighter tint than the cream page, held at low opacity so the page reads through it */
+  background: rgba(255, 253, 249, 0.55);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 999px;
   padding-inline: clamp(16px, 2vw, 30px);
   box-shadow: 0 10px 30px -22px rgba(17, 17, 16, 0.55);
   transition: background 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
 }
 .site-header.is-stuck .shell {
-  background: rgba(247, 243, 236, 0.92);
-  border-color: rgba(17, 17, 16, 0.12);
-  box-shadow: 0 18px 44px -26px rgba(17, 17, 16, 0.6);
+  background: rgba(255, 253, 249, 0.72);
+  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 18px 44px -26px rgba(17, 17, 16, 0.55);
 }
 .nav {
   position: relative;
