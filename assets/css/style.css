@@ -143,22 +143,36 @@ p { margin: 0 0 1.1em; }
 .btn--sm { padding: 11px 20px; font-size: 0.85rem; }
 
 /* ---------- header ---------- */
+/* a pill that floats clear of the page and rides down it as you scroll */
 .site-header {
   position: sticky;
-  top: 0;
+  top: calc(14px + env(safe-area-inset-top, 0px));
   z-index: 60;
-  backdrop-filter: blur(14px);
-  background: rgba(247, 243, 236, 0.82);
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
+  padding-block: 14px 0;
+  background: transparent;
 }
-.site-header.is-stuck { border-bottom-color: var(--line); background: rgba(247, 243, 236, 0.95); }
+.site-header .shell {
+  background: rgba(247, 243, 236, 0.78);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(17, 17, 16, 0.07);
+  border-radius: 999px;
+  padding-inline: clamp(16px, 2vw, 30px);
+  box-shadow: 0 10px 30px -22px rgba(17, 17, 16, 0.55);
+  transition: background 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+.site-header.is-stuck .shell {
+  background: rgba(247, 243, 236, 0.92);
+  border-color: rgba(17, 17, 16, 0.12);
+  box-shadow: 0 18px 44px -26px rgba(17, 17, 16, 0.6);
+}
 .nav {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 14px 0;
+  padding: 10px 0;
 }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .brand__mark { width: 50px; height: 50px; flex: none; }
@@ -823,17 +837,22 @@ p { margin: 0 0 1.1em; }
   .nav__toggle { display: grid; }
   .nav__links {
     position: absolute;
-    top: 100%; left: 0; right: 0;
-    background: var(--paper);
-    border-bottom: 1px solid var(--line);
+    top: calc(100% + 14px); left: -10px; right: -10px;
+    background: rgba(255, 253, 249, 0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    box-shadow: 0 22px 50px -28px rgba(17, 17, 16, 0.6);
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    padding: 10px 6vw 22px;
+    padding: 8px 22px 14px;
     display: none;
   }
   .nav.is-open .nav__links { display: flex; }
-  .nav__links a { padding: 13px 0; border-bottom: 1px solid var(--line); }
+  .nav__links a { padding: 13px 2px; border-bottom: 1px solid var(--line); }
+  .nav__links a:last-child { border-bottom: 0; }
 
   /* logo left, call to action centred, menu right */
   .nav {
@@ -990,7 +1009,7 @@ p { margin: 0 0 1.1em; }
 }
 
 /* anchor targets clear the sticky header */
-[id] { scroll-margin-top: 96px; }
+[id] { scroll-margin-top: 124px; }
 
 /* keep the three perks on one row on a phone */
 @media (max-width: 760px) {
