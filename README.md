@@ -43,6 +43,10 @@ Deploy by uploading the folder to any static host (GitHub Pages, Netlify, Vercel
   so the Whop store is the single delivery point.
 - `assets/downloads/creator-product-playbook.pdf` is kept in the repo but is no longer linked;
   delivery happens through Whop.
+- Niche imagery: `assets/img/niche-*.webp` are the supplied product shots (one per niche on the home page's
+  Find your niche grid), resized to 1000px wide WebP. They replace the icon tiles on those six cards.
+  Note `.card__shot` sets `height: auto` — without it the HTML `height` attribute overrides `aspect-ratio`
+  and the cards render a tall centre crop.
 - Book: `assets/img/Playbook Image.png` is the supplied 3D render. `playbook-book.png` is that file cropped
   to its artwork and scaled to 1100px tall, shown flat via `.book-shot` on `playbook.html` and `blog.html`.
   The render carries its own spine, page edges and shadow, so no CSS mockup is applied over it.
