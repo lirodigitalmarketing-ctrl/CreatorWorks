@@ -1161,13 +1161,26 @@ p { margin: 0 0 1.1em; }
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(90deg, rgba(9, 8, 7, 0.92) 0%, rgba(9, 8, 7, 0.78) 40%, rgba(9, 8, 7, 0.46) 66%, rgba(9, 8, 7, 0.2) 100%);
+  background: linear-gradient(180deg, rgba(9, 8, 7, 0.88) 0%, rgba(9, 8, 7, 0.72) 42%, rgba(9, 8, 7, 0.78) 100%);
 }
-.hero--home .hero__grid { grid-template-columns: minmax(0, 1fr); }
-.hero--home h1 { max-width: 17ch; }
+.hero--home .hero__grid { grid-template-columns: minmax(0, 1fr); justify-items: center; text-align: center; }
+.hero--home h1 { max-width: 17ch; margin-inline: auto; }
+.hero--home .hero__rule { margin-inline: auto; }
+.hero--home .hero__sub,
+.hero--home .lead { margin-inline: auto; }
+.hero--home .hero__actions { justify-content: center; }
+.hero--home .hero__note { justify-content: center; text-align: left; }
+/* a rule either side of the eyebrow, since it now sits centred */
+.hero--home .eyebrow::before {
+  content: "";
+  width: 54px;
+  height: 2px;
+  background: var(--gold-light);
+  opacity: 0.65;
+}
 .hero--home h1 { color: #fff; }
-.hero--home .hero__sub { color: #fff; max-width: 34ch; }
-.hero--home .lead { color: rgba(255, 255, 255, 0.76); max-width: 52ch; }
+.hero--home .hero__sub { color: #fff; max-width: 36ch; }
+.hero--home .lead { color: rgba(255, 255, 255, 0.76); max-width: 54ch; }
 .hero--home .eyebrow { color: var(--gold-light); }
 .hero--home .eyebrow::after { background: var(--gold-light); }
 .hero--home .hero__note { color: rgba(255, 255, 255, 0.72); }
