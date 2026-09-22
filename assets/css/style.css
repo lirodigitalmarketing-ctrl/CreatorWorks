@@ -19,6 +19,7 @@
   --font-body: "Inter", system-ui, -apple-system, sans-serif;
   --font-hand: "Caveat", cursive;
 
+  --header-h: 90px;
   --shell: min(1200px, 92vw);
   --radius: 18px;
   --radius-lg: 28px;
@@ -149,6 +150,7 @@ p { margin: 0 0 1.1em; }
   top: calc(14px + env(safe-area-inset-top, 0px));
   z-index: 60;
   padding-block: 14px 0;
+  margin-bottom: calc(-1 * var(--header-h));   /* float over the page instead of sitting above it */
   background: transparent;
   /* translate3d keeps the pill (and its blur) on its own layer while it moves */
   transform: translate3d(0, 0, 0);
@@ -160,7 +162,7 @@ p { margin: 0 0 1.1em; }
 .site-header.is-tucked { transform: translate3d(0, calc(-100% - 26px), 0); }
 .site-header .shell {
   /* a lighter tint than the cream page, held at low opacity so the page reads through it */
-  background: rgba(255, 253, 249, 0.55);
+  background: rgba(255, 253, 249, 0.66);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   border: 1px solid rgba(255, 255, 255, 0.55);
@@ -170,7 +172,7 @@ p { margin: 0 0 1.1em; }
   transition: background 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
 }
 .site-header.is-stuck .shell {
-  background: rgba(255, 253, 249, 0.72);
+  background: rgba(255, 253, 249, 0.82);
   border-color: rgba(255, 255, 255, 0.7);
   box-shadow: 0 18px 44px -26px rgba(17, 17, 16, 0.55);
 }
@@ -254,7 +256,7 @@ p { margin: 0 0 1.1em; }
 /* ---------- hero ---------- */
 .hero {
   position: relative;
-  padding: clamp(50px, 7vw, 90px) 0 clamp(60px, 7vw, 100px);
+  padding: calc(var(--header-h) + clamp(30px, 5vw, 60px)) 0 clamp(60px, 7vw, 100px);
   overflow: hidden;
 }
 .hero__blob {
@@ -756,7 +758,7 @@ p { margin: 0 0 1.1em; }
 
 /* ---------- page hero ---------- */
 .page-hero {
-  padding: clamp(50px, 7vw, 92px) 0 clamp(30px, 4vw, 54px);
+  padding: calc(var(--header-h) + clamp(28px, 4vw, 56px)) 0 clamp(30px, 4vw, 54px);
   position: relative;
   overflow: hidden;
 }
@@ -1018,7 +1020,7 @@ p { margin: 0 0 1.1em; }
 }
 
 /* anchor targets clear the sticky header */
-[id] { scroll-margin-top: 124px; }
+[id] { scroll-margin-top: calc(var(--header-h) + 30px); }
 
 /* keep the three perks on one row on a phone */
 @media (max-width: 760px) {
@@ -1152,7 +1154,7 @@ p { margin: 0 0 1.1em; }
   position: relative;
   isolation: isolate;
   background: #0b0a09 url("../img/hero-bg.webp") center bottom / cover no-repeat;
-  padding-block: clamp(90px, 13vw, 170px) clamp(80px, 11vw, 140px);
+  padding-block: calc(var(--header-h) + clamp(60px, 9vw, 110px)) clamp(80px, 11vw, 140px);
   color: #fff;
 }
 /* darkened from the left so the words hold, clear on the right so the desk shows */
@@ -1203,3 +1205,5 @@ p { margin: 0 0 1.1em; }
     background: linear-gradient(180deg, rgba(11, 10, 9, 0.88) 0%, rgba(11, 10, 9, 0.74) 55%, rgba(11, 10, 9, 0.6) 100%);
   }
 }
+
+@media (max-width: 620px) { :root { --header-h: 82px; } }
