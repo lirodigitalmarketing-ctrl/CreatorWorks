@@ -1151,7 +1151,7 @@ p { margin: 0 0 1.1em; }
 .hero--home {
   position: relative;
   isolation: isolate;
-  background: #0b0a09 url("../img/hero-bg.webp") right center / cover no-repeat;
+  background: #0b0a09 url("../img/hero-bg.webp") center bottom / cover no-repeat;
   padding-block: clamp(90px, 13vw, 170px) clamp(80px, 11vw, 140px);
   color: #fff;
 }
@@ -1161,10 +1161,10 @@ p { margin: 0 0 1.1em; }
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(90deg, rgba(11, 10, 9, 0.93) 0%, rgba(11, 10, 9, 0.82) 42%, rgba(11, 10, 9, 0.45) 66%, rgba(11, 10, 9, 0.12) 100%);
+  background: linear-gradient(90deg, rgba(9, 8, 7, 0.92) 0%, rgba(9, 8, 7, 0.78) 40%, rgba(9, 8, 7, 0.46) 66%, rgba(9, 8, 7, 0.2) 100%);
 }
 .hero--home .hero__grid { grid-template-columns: minmax(0, 1fr); }
-.hero--home h1 { max-width: 16ch; }
+.hero--home h1 { max-width: 17ch; }
 .hero--home h1 { color: #fff; }
 .hero--home .hero__sub { color: #fff; max-width: 34ch; }
 .hero--home .lead { color: rgba(255, 255, 255, 0.76); max-width: 52ch; }

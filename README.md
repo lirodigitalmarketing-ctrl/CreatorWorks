@@ -43,10 +43,9 @@ Deploy by uploading the folder to any static host (GitHub Pages, Netlify, Vercel
   so the Whop store is the single delivery point.
 - `assets/downloads/creator-product-playbook.pdf` is kept in the repo but is no longer linked;
   delivery happens through Whop.
-- Home hero: `assets/img/hero-bg.webp` (and `-sm` for phones) is the supplied desk photograph composed onto a
-  wider dark canvas, with its left edge feathered into black so the headline has somewhere to sit — the photo
-  alone has no dark space for type. The section darkens it further with a left-to-right gradient, so hero text
-  and buttons on the home page are the light-on-dark variants.
+- Home hero: `assets/img/hero-bg.webp` (and `-sm` for phones) is the supplied desk photograph, anchored
+  bottom-centre and darkened by a left-to-right gradient so the headline holds while the laptop, desk and city
+  keep the right of the frame. Hero text and buttons on the home page are the light-on-dark variants.
 - Niche imagery: `assets/img/niche-*.webp` are the supplied product shots (one per niche on the home page's
   Find your niche grid), resized to 1000px wide WebP. They replace the icon tiles on those six cards.
   Note `.card__shot` sets `height: auto` — without it the HTML `height` attribute overrides `aspect-ratio`
