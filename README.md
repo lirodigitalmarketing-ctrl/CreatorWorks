@@ -9,7 +9,7 @@ Static HTML/CSS/JS. No build step, no dependencies.
 
 | File | Page |
 | --- | --- |
-| `index.html` | Home — hero, niche marquee, "hiding inside your content", niches, decision guide, 5-step process, free playbook banner |
+| `index.html` | Home — hero, niche marquee, "hiding inside your content", niches, 5-step process, free playbook banner |
 | `about.html` | About Us — why we exist, values, studio team, the deal |
 | `services.html` | Services — product types, build process, launch support, FAQ |
 | `projects.html` | Our Projects — filterable case-study grid + stats |
@@ -59,7 +59,7 @@ Deploy by uploading the folder to any static host (GitHub Pages, Netlify, Vercel
   from the source if the logo ever changes.
 - The brief form on `start.html` is front-end only — it shows a confirmation and resets.
   Point it at a form handler (Formspree, Netlify Forms, your own endpoint) before going live.
-- Courses are presented as **coming soon** everywhere (services card, niche lists, decision guide, footer,
+- Courses are presented as **coming soon** everywhere (services card, niche lists, footer,
   brief form, FAQs) because filming hasn't started yet. When the studio launches, drop the `soon` /
   `is-soon` / `card--soon` classes and restore the full course copy in `services.html#courses`.
 - The header floats *over* the page: it is pulled up by `margin-bottom: calc(-1 * var(--header-h))`, and the
