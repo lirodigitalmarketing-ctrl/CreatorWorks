@@ -1276,3 +1276,26 @@ p { margin: 0 0 1.1em; }
 @media (max-width: 620px) {
   .product__cover { min-height: 280px; padding: 30px 22px 24px; }
 }
+
+/* whole product card is a link to its detail page */
+.product { position: relative; }
+.product__link {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  text-indent: -9999px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.product__link:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.product__actions { position: relative; z-index: 3; }
+
+/* large cover on a product detail page */
+.product__art--lg {
+  width: min(100%, 360px);
+  margin-inline: auto;
+  padding: 34px 30px;
+}
+.product__art--lg b { font-size: clamp(1.9rem, 4.4vw, 2.6rem); }
+.product__art--lg i { font-size: 1.55rem; }
