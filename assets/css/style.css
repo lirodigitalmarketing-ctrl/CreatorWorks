@@ -1299,3 +1299,70 @@ p { margin: 0 0 1.1em; }
 }
 .product__art--lg b { font-size: clamp(1.9rem, 4.4vw, 2.6rem); }
 .product__art--lg i { font-size: 1.55rem; }
+
+/* light cover panel, for product art shot on its own cream background */
+.product__cover--light {
+  background: linear-gradient(180deg, #faf6ee 0%, #f3efe3 100%);
+  padding: 0;
+  min-height: 0;
+}
+.product__cover--light::after { display: none; }
+.product__cover--light .product__shot { width: 100%; height: auto; display: block; }
+.product:hover .product__cover--light .product__shot { transform: translateY(-4px) scale(1.02); }
+.product__shot { transition: transform 0.5s var(--ease); }
+
+/* product spec chips, straight off the product artwork */
+.specs {
+  list-style: none;
+  margin: 0 0 30px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.specs li {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 9px 16px 9px 11px;
+  border-radius: 999px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  font-size: 0.88rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-soft);
+}
+.specs b {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--gold);
+  letter-spacing: -0.02em;
+}
+.specs--tight li { padding: 6px 13px 6px 9px; font-size: 0.8rem; box-shadow: none; }
+
+/* the product shot sits in the product hero's stage */
+.hero--product .stage .product__shot { width: min(100%, 460px); height: auto; }
+@media (max-width: 980px) {
+  .hero--product .stage .product__shot { width: min(100%, 380px); }
+}
+
+/* both store covers share one height so the cards line up */
+.product__cover { aspect-ratio: 4 / 3; min-height: 0; position: relative; }
+.product__cover--light .product__shot {
+  position: absolute;
+  inset: 12px;
+  width: calc(100% - 24px);
+  height: calc(100% - 24px);
+  object-fit: contain;
+}
+.product__cover .book-shot { width: min(100%, 215px); max-height: 100%; height: auto; object-fit: contain; }
+@media (max-width: 620px) {
+  .product__cover { aspect-ratio: 5 / 4; }
+}
+
+/* the product shot carries its own cream backdrop, so frame it deliberately */
+.hero--product .stage .product__shot {
+  border-radius: var(--radius-lg);
+  box-shadow: 0 30px 60px -38px rgba(17, 17, 16, 0.5);
+}
