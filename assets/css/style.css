@@ -1348,17 +1348,17 @@ p { margin: 0 0 1.1em; }
 }
 
 /* both store covers share one height so the cards line up */
-.product__cover { aspect-ratio: 4 / 3; min-height: 0; position: relative; }
+.product__cover { aspect-ratio: 10 / 11; min-height: 0; position: relative; }
 .product__cover--light .product__shot {
   position: absolute;
-  inset: 12px;
-  width: calc(100% - 24px);
-  height: calc(100% - 24px);
-  object-fit: contain;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .product__cover .book-shot { width: min(100%, 215px); max-height: 100%; height: auto; object-fit: contain; }
 @media (max-width: 620px) {
-  .product__cover { aspect-ratio: 5 / 4; }
+  .product__cover { aspect-ratio: 1 / 1; }
 }
 
 /* the product shot carries its own cream backdrop, so frame it deliberately */
